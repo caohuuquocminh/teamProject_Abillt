@@ -1,0 +1,13 @@
+<%= simple_form_for @app, :html => { :multipart => true } do |f| %>
+	<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
+	<%= f.file_field :app_img %>
+	<%= f.input :name, label: "Name of the application" %>
+	<%= f.input :description %>
+	<%= f.input :link %>
+	<%= f.input :developer %>
+	<%= f.input :operation %>
+	<%= f.input :price %>
+	<%= f.button :submit %>
+
+<% end %>
+

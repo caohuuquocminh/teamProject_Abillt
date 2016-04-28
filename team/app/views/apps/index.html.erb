@@ -1,0 +1,13 @@
+<h1 class="current-category"><%= params[:category] %></h1>
+
+
+<div class="row">
+<% @apps.each do |app| %>
+	<div class="col-md-3">
+	<a href="/apps/<%= app.id %>">
+			<%= image_tag app.app_img.url(:app_index), class: "app" %>
+	</a>
+	</div>
+<% end %>
+
+</div>
