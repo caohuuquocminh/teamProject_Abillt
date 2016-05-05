@@ -1,0 +1,20 @@
+<h1>Store Listing</h1>
+
+<% @products.each do |product| %>
+		<section class="product">
+          <h2><%= link_to product.name, store_product_path(product) %></h2>
+          <ul><%= product.rating %></ul>
+          <ul><%= number_to_currency product.price %></ul>
+        </dl>
+        
+        <td class="image-description">
+            <td><%= image_tag product.image.url(:thumb) %></td>
+        </td>
+        <% if product.category %>
+        <p>
+        	<strong>Category:</strong><%= product.category.name %>
+        </p>
+        <% end %>
+
+	</section>
+<%end%>
